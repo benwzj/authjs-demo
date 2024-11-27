@@ -5,5 +5,5 @@ export { auth as middleware } from "@/auth" // add this code to keep the session
 // }
 
 export const config = {
-  matcher: '/private/:path*',
+  matcher: ['/private/:path*', '/login/:path*']
 }

@@ -1,20 +1,22 @@
 'use client';
 
 import { login } from '@/lib/actions';
-import { useFormState, useFormStatus } from 'react-dom';
-
+import { useFormStatus } from 'react-dom';
+import { useActionState } from 'react';
 
 const LoginForm = () => {
-  const [formState, dispatch] = useFormState(login, undefined);
+  const [formState, dispatch] = useActionState(login, undefined);
 
   return (
-    <form action={dispatch} className='space-y-4 w-full max-w-sm'>
+    <form action={dispatch} className='flex flex-col space-y-2 w-full max-w-sm'>
       <input 
+        className=" w-full rounded-md border border-gray-200 py-[9px] pl-2 text-sm outline-2 placeholder:text-gray-500 dark:bg-slate-700"
         required 
         name='email' 
         placeholder='email' 
       />
       <input
+        className=" w-full rounded-md border border-gray-200 py-[9px] pl-2 text-sm outline-2 placeholder:text-gray-500 dark:bg-slate-700"
         required
         name='password'
         type='password'

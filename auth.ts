@@ -3,12 +3,12 @@ import { authConfig } from './auth.config';
 import Credentials from 'next-auth/providers/credentials'; 
 
 async function getUser(email: string, password: string): Promise<unknown> {
-  return {
+  return email === 'e@e.com' ? {
     id: 1,
     name: 'test user',
     email: email,
     password: password,
-  };
+  } : null;
 }
 
 export const {
