@@ -1,6 +1,7 @@
 import NextAuth from "next-auth"
 import { authConfig } from './auth.config';
 import Credentials from 'next-auth/providers/credentials'; 
+import Google from "next-auth/providers/google";
 
 async function getUser(email: string, password: string): Promise<unknown> {
   return email === 'e@e.com' ? {
@@ -34,6 +35,7 @@ export const {
         return user ?? null;
       },
     }),
+    Google
   ],
 });
 
