@@ -2,6 +2,7 @@ import NextAuth from "next-auth"
 import { authConfig } from './auth.config';
 import Credentials from 'next-auth/providers/credentials'; 
 import Google from "next-auth/providers/google";
+import GitHub from "next-auth/providers/github"
 
 async function getUser(email: string, password: string): Promise<unknown> {
   return email === 'e@e.com' ? {
@@ -16,7 +17,7 @@ export const {
   auth,
   signIn,
   signOut,
-  handlers: { GET, POST },
+  handlers,
 } = NextAuth({
   ...authConfig,
   providers: [
@@ -35,7 +36,8 @@ export const {
         return user ?? null;
       },
     }),
-    Google
+    Google,
+    GitHub
   ],
 });
 

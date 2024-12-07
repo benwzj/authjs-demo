@@ -11,10 +11,14 @@ const Private = async () => {
           className='mb-9 flex items-center justify-center gap-2 leading-none dark:text-white'
         >
           <p className="text-[40px]">This is Private Page!</p>
+      </div>
+      <div className="flex flex-col rounded-md bg-gray-100 dark:bg-gray-500">
+        <div className="rounded-t-md bg-gray-200 p-4 font-bold dark:bg-gray-600">
+          Session Content:
         </div>
-      <div>
-        <p>User: {session?.user?.name}</p>
-        <p>EMail: {session?.user?.email}</p>
+        <pre className="whitespace-pre-wrap break-all px-4 py-6">
+          {JSON.stringify(session, null, 2)}
+        </pre>
       </div>
       <div className="flex mt-10 min-h-full gap-3 items-center justify-center p-4">
         <Link
