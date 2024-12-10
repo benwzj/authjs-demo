@@ -1,12 +1,19 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+## Overview
+
+- [Next.js] project bootstrapped with [`create-next-app`].
+- Test Auth.js.
+- Try to focus on the Auth Steps and remove others.
+- Support Credentials, OAuth (GitHut, Google), MagicLink(SendGrid), Prisma
+
+## Run App
 ```bash
 npm run dev
 ```
 
 ## Authorization callback URL
-When you setup OAuth Authorization callback URL. set up the address below:
+When setting up OAuth Authorization callback URL, you can use blow for test:
 ```
 http://localhost:3000/auth/callback/github
 ```
+
